@@ -25,6 +25,6 @@ class MainActivity : AppCompatActivity() {
         val textAttendStr = textNameView.text.toString()
 
 
-        textNameTextView.text = "Hello, $textAttendStr"
+        textNameTextView.text = "Hello, $textAttendStr !"
     }
 }
