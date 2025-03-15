@@ -19,20 +19,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/text_attend_edit_text"
-        android:text="Enter Your Name ::"
-        android:textSize="32sp" />
-
+        android:text="Name of expense"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/text_attend_edit_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="7"
-        android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="48dp"
-        android:textAlignment="viewStart"
-        android:textSize="20sp" />
+        android:hint="Name of expense"/>
 
     <Button
         android:id="@+id/show_name_button"
