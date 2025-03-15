@@ -18,16 +18,45 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/text_attend_edit_text"
+        android:labelFor="@id/expense_name"
         android:text="Name of expense"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/text_attend_edit_text"
+        android:id="@+id/expense_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="Name of expense"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/expense_amount"
+        android:text="Amount"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/expense_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Amount"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/expense_date"
+        android:text="Date"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/expense_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="YYYY-MM-DD"/>
 
     <Button
         android:id="@+id/show_name_button"
