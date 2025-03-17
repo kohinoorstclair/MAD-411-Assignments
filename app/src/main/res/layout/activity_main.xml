@@ -6,10 +6,10 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7F03A9F4"
+    android:background="#19F4DC03"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingTop="120dp"
+    android:paddingTop="60dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
     tools:context="com.example.mad_411_assignments.MainActivity">
@@ -19,68 +19,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/expense_name"
-        android:text="Name of expense"
+        android:text="enter the Name of expense"
         android:textSize="18sp" />
 
     <EditText
         android:id="@+id/expense_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Name of expense"/>
+        android:layout_height="60dp"
+        android:hint="Name of expense"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/expense_amount"
-        android:text="Amount"
+        android:text="enter the amount spend"
         android:textSize="18sp" />
+
 
     <EditText
         android:id="@+id/expense_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Amount"/>
-
+        android:layout_height="60dp"
+        android:hint="Amount"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/expense_date"
-        android:text="Date"
+        android:text="specify the date"
         android:textSize="18sp" />
 
     <EditText
         android:id="@+id/expense_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="YYYY-MM-DD"/>
+        android:hint="YYYY-MM-DD"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/show_name_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#D32F2F"
         android:insetTop="6dp"
         android:insetBottom="6dp"
         android:onClick="ShowName"
-        android:text="Show Name"
+        android:text="Add Expense"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:iconPadding="30dp" />
 
 
-
-    <TextView
-        android:id="@+id/show_name_text"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ExpenseList"
+        android:layout_width="376dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:textColor="#F44336"
-        android:textSize="48sp" />
+        android:scrollbars="vertical" />
+
 
 </LinearLayout>
