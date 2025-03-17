@@ -2,29 +2,37 @@ package com.example.mad_411_assignments
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import android.widget.EditText
-import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textNameView: EditText
-    private lateinit var textNameTextView: TextView
+    private lateinit var ExpenseNameInput: EditText
+    private lateinit var ExpenseAmountInput: EditText
+
+    private lateinit var ExpenseDateInput: EditText
+    private lateinit var addExpenseButton: Button
+    private lateinit var expenseList: RecyclerView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textNameView = findViewById(R.id.text_attend_edit_text)
-        textNameTextView = findViewById(R.id.show_name_text)
+
+        ExpenseNameInput = findViewById(R.id.expense_name)
+        ExpenseAmountInput = findViewById(R.id.expense_amount)
+        ExpenseDateInput = findViewById(R.id.expense_date)
+
+
+        addExpenseButton = findViewById(R.id.add_expense)
+        expenseList = findViewById(R.id.ExpenseList)
     }
 
-    fun ShowName(view: View) {
-        val textAttendStr = textNameView.text.toString()
 
-
-        textNameTextView.text = "Hello, $textAttendStr !"
-    }
 }
