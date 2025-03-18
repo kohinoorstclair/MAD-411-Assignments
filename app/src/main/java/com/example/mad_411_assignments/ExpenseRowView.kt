@@ -22,6 +22,11 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         amountText.text = expense.amount
         dateText.text = expense.date
 
+        deleteButton.setOnClickListener {
+            if (adapterPosition != RecyclerView.NO_POSITION) {
+                onDelete(adapterPosition)
+            }
 
+        }
     }
 }
