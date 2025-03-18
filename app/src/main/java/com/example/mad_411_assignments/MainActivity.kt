@@ -63,6 +63,8 @@ class MainActivity : AppCompatActivity() {
                     expenseAdapter.addExpense(Expense(name, amount, selectedDate))
                     ExpenseNameInput.text.clear()
                     ExpenseAmountInput.text.clear()
+                    DateText.text="no date selected"
+                    selectedDate=""
                 } else {
                     ExpenseAmountInput.error = "Amount must be a valid number"
                 }
