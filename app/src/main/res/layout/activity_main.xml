@@ -44,19 +44,20 @@
         android:hint="Amount"
         android:inputType="text" />
 
+
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:text="select date" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/expense_date"
-        android:text="specify the date"
+        android:id="@+id/expense_date"
+        android:text="Date: Not Selected"
         android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/expense_date"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:hint="YYYY-MM-DD"
-        android:inputType="text" />
 
     <Button
         android:id="@+id/add_expense"
@@ -77,7 +78,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ExpenseList"
         android:layout_width="376dp"
-        android:layout_height="wrap_content"
+        android:layout_height="302dp"
         android:scrollbars="vertical" />
 
 
