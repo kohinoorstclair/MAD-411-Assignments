@@ -1,7 +1,7 @@
 package com.example.mad_411_assignments
 
-class expense (
+class Expense (
     val name: String,
-    val amount: Double,
+    val amount: String,
     val date: String
 )

@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 import android.widget.EditText
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -32,7 +33,19 @@ class MainActivity : AppCompatActivity() {
 
         addExpenseButton = findViewById(R.id.add_expense)
         expenseList = findViewById(R.id.ExpenseList)
+
+        expenseList.layoutManager = LinearLayoutManager(this)
+
+        addExpenseButton.setOnClickListener {
+            val name = ExpenseNameInput.text.toString()
+            val amount = ExpenseAmountInput.text.toString()
+            val date = ExpenseDateInput.text.toString()
+            if (name.isNotBlank() && amount.isNotBlank()) {
+
+                ExpenseNameInput.text.clear()
+                ExpenseAmountInput.text.clear()
+                ExpenseDateInput.text.clear()
+            }
+        }
     }
-
-
 }

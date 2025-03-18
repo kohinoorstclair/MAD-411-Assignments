@@ -66,7 +66,7 @@
         android:backgroundTint="#D32F2F"
         android:insetTop="6dp"
         android:insetBottom="6dp"
-        android:onClick="ShowName"
+
         android:text="Add Expense"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
