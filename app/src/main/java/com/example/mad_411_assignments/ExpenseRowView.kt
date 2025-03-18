@@ -19,7 +19,7 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     // made a function to create the row inside the recycle view
     fun createView(expense: Expense, onDelete: (Int) -> Unit) {
         nameText.text = expense.name
-        amountText.text = expense.amount
+        amountText.text = "$${expense.amount}"
         dateText.text = expense.date
 
         deleteButton.setOnClickListener {
