@@ -2,6 +2,8 @@ package com.example.mad_411_assignments
 
 import ExpenseViewListAdapter
 import android.app.DatePickerDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
      lateinit var expenseList: RecyclerView
     private lateinit var expenseAdapter: ExpenseViewListAdapter
     private var selectedDate: String = ""
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +83,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        val financialTipsButton: Button = findViewById(R.id.tipsButton)
+
+        financialTipsButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.investopedia.com/personal-finance-4427765"))
+            startActivity(intent)
+        }
+
+
     }
     override fun onStart() {
         super.onStart()

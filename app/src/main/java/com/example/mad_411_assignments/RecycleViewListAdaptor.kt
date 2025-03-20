@@ -1,8 +1,10 @@
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mad_411_assignments.Expense
+import com.example.mad_411_assignments.ExpenseDetailsActivity
 import com.example.mad_411_assignments.ExpenseRowView
 import com.example.mad_411_assignments.R
 
@@ -25,6 +27,7 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>) : Recyc
             expenses.removeAt(pos)
             notifyItemRemoved(pos)
         }
+
     }
 //
     override fun getItemCount(): Int = expenses.size
