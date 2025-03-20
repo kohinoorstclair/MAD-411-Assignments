@@ -1,6 +1,8 @@
 package com.example.mad_411_assignments
 
 import ExpenseViewListAdapter
+import FooterFragment
+import HeaderFragment
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
@@ -10,6 +12,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.EditText
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.Calendar
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity() {
      lateinit var expenseList: RecyclerView
     private lateinit var expenseAdapter: ExpenseViewListAdapter
     private var selectedDate: String = ""
-
+    lateinit var footerFragment: FooterFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,6 +92,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.investopedia.com/personal-finance-4427765"))
             startActivity(intent)
         }
+        // added code for fragments
+        val headerFragment = HeaderFragment()
+        footerFragment = FooterFragment()
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.headerContainer, headerFragment)
+            replace(R.id.footerContainer, footerFragment)
+            commit()
+        }
+
 
 
     }
@@ -116,5 +129,15 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d("ActivityLifecycle", "onDestroy called")
     }
+    fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer, fragment)
+            addToBackStack(null)
+            commit()
+        }
+    }
 
+    fun updateFooter(expenseAmount: Double) {
+        footerFragment.updateTotalAmount(expenseAmount)
+    }
 }

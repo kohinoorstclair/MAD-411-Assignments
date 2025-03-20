@@ -37,6 +37,8 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
             intent.putExtra("amount", expense.amount)
             intent.putExtra("date", expense.date)
             context.startActivity(intent)
+
+
         }
     }
 }
