@@ -1,17 +1,22 @@
 
+import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mad_411_assignments.Expense
 import com.example.mad_411_assignments.ExpenseDetailsActivity
+import com.example.mad_411_assignments.ExpenseFileEditor
 import com.example.mad_411_assignments.ExpenseRowView
 import com.example.mad_411_assignments.R
 
+
 // adaptor class the binds the expenses to the recylceview
 
-class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private val footerFragment: FooterFragment) : RecyclerView.Adapter<ExpenseRowView>() {
-
+class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private val footerFragment: FooterFragment,private val context: Context) : RecyclerView.Adapter<ExpenseRowView>() {
+    private val expenseFileEditor = ExpenseFileEditor()
     // this function is used to add expenserowview in place of each iten
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseRowView {
@@ -27,6 +32,8 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private
             footerFragment.subtractFromTotal(expenses[pos].amount)
             expenses.removeAt(pos)
             notifyItemRemoved(pos)
+            expenseFileEditor.saveExpensesToFile(context, expenses)
+
         }
 
     }
@@ -39,6 +46,13 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private
         expenses.add(expense)
         footerFragment.addToTotal(expense.amount)
         notifyItemInserted(expenses.size - 1)
+        expenseFileEditor.saveExpensesToFile(context, expenses)
+
+    }
+    fun updateExpenses(newExpenses: List<Expense>) {
+        expenses.clear()
+        expenses.addAll(newExpenses)
+        notifyDataSetChanged()
     }
 
 }

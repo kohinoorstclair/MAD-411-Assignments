@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var expenseAdapter: ExpenseViewListAdapter
     private var selectedDate: String = ""
     lateinit var footerFragment: FooterFragment
+    private val expenseFileEditor = ExpenseFileEditor()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         expenseList = findViewById(R.id.ExpenseList)
 
         footerFragment = FooterFragment()
-        expenseAdapter = ExpenseViewListAdapter(mutableListOf(), footerFragment)
+        expenseAdapter = ExpenseViewListAdapter(mutableListOf(), footerFragment,this)
         expenseList.adapter = expenseAdapter
 
         expenseList.layoutManager = LinearLayoutManager(this)
@@ -112,6 +113,8 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("ActivityLifecycle", "onStart called")
+        val expenses = expenseFileEditor.loadExpensesFromFile(this)
+        expenseAdapter.updateExpenses(expenses)
     }
 
     override fun onResume() {
