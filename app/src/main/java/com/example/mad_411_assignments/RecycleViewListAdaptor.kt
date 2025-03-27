@@ -10,7 +10,7 @@ import com.example.mad_411_assignments.R
 
 // adaptor class the binds the expenses to the recylceview
 
-class ExpenseViewListAdapter(private val expenses: MutableList<Expense>) : RecyclerView.Adapter<ExpenseRowView>() {
+class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private val footerFragment: FooterFragment) : RecyclerView.Adapter<ExpenseRowView>() {
 
     // this function is used to add expenserowview in place of each iten
 
@@ -24,6 +24,7 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>) : Recyc
     override fun onBindViewHolder(holder: ExpenseRowView, position: Int) {
         val expense = expenses[position]
         holder.createView(expense) { pos ->
+            footerFragment.subtractFromTotal(expenses[pos].amount)
             expenses.removeAt(pos)
             notifyItemRemoved(pos)
         }
@@ -36,6 +37,8 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>) : Recyc
     fun addExpense(expense: Expense) {
 
         expenses.add(expense)
+        footerFragment.addToTotal(expense.amount)
         notifyItemInserted(expenses.size - 1)
     }
+
 }

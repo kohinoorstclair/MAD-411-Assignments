@@ -42,7 +42,9 @@ class MainActivity : AppCompatActivity() {
         ExpenseAmountInput = findViewById(R.id.expense_amount)
         addExpenseButton = findViewById(R.id.add_expense)
         expenseList = findViewById(R.id.ExpenseList)
-        expenseAdapter = ExpenseViewListAdapter(mutableListOf())
+
+        footerFragment = FooterFragment()
+        expenseAdapter = ExpenseViewListAdapter(mutableListOf(), footerFragment)
         expenseList.adapter = expenseAdapter
 
         expenseList.layoutManager = LinearLayoutManager(this)
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                 val amountValue = amount.toDoubleOrNull()
                 if (amountValue != null) {
                     expenseAdapter.addExpense(Expense(name, amount, selectedDate))
+
                     ExpenseNameInput.text.clear()
                     ExpenseAmountInput.text.clear()
                     DateText.text="no date selected"
@@ -94,7 +97,8 @@ class MainActivity : AppCompatActivity() {
         }
         // added code for fragments
         val headerFragment = HeaderFragment()
-        footerFragment = FooterFragment()
+
+
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.headerContainer, headerFragment)
@@ -129,15 +133,5 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d("ActivityLifecycle", "onDestroy called")
     }
-    fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, fragment)
-            addToBackStack(null)
-            commit()
-        }
-    }
 
-    fun updateFooter(expenseAmount: Double) {
-        footerFragment.updateTotalAmount(expenseAmount)
-    }
 }

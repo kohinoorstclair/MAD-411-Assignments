@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import FooterFragment
 
 class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     // setting views to variables
@@ -38,7 +39,7 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
             intent.putExtra("date", expense.date)
             context.startActivity(intent)
 
-
         }
+
     }
 }

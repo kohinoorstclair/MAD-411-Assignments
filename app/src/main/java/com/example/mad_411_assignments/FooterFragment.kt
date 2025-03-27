@@ -9,6 +9,7 @@ import com.example.mad_411_assignments.R
 class FooterFragment : Fragment() {
 
     private lateinit var totalAmountTextView: TextView
+    var totalAmount = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -16,11 +17,21 @@ class FooterFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_footer, container, false)
         totalAmountTextView = view.findViewById(R.id.totalAmount)
+        updateTotalAmount()
         return view
     }
 
+    fun addToTotal(amount: String) {
+        totalAmount += amount.toDoubleOrNull() ?: 0.0
+        updateTotalAmount()
+    }
 
-    fun updateTotalAmount(amount: Double) {
-        totalAmountTextView.text = "Total Expenses: $%.2f".format(amount)
+    fun subtractFromTotal(amount: String) {
+        totalAmount -= amount.toDoubleOrNull() ?: 0.0
+        updateTotalAmount()
+    }
+
+    private fun updateTotalAmount() {
+        totalAmountTextView.text = "Total Expenses: $%.2f".format(totalAmount)
     }
 }
