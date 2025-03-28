@@ -24,7 +24,6 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private
         val view = LayoutInflater.from(parent.context).inflate(R.layout.expense_view, parent, false)
         return ExpenseRowView(view)
     }
-
 // this is use th connect dats to teh view of expense and use of delete call back
     override fun onBindViewHolder(holder: ExpenseRowView, position: Int) {
         val expense = expenses[position]
@@ -33,28 +32,29 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private
             expenses.removeAt(pos)
             notifyItemRemoved(pos)
             expenseFileEditor.saveExpensesToFile(context, expenses)
-
         }
-
     }
-//
     override fun getItemCount(): Int = expenses.size
-
     // this adds expense to list and notify update recycleview
     fun addExpense(expense: Expense) {
-
         expenses.add(expense)
         footerFragment.addToTotal(expense.amount)
         notifyItemInserted(expenses.size - 1)
         expenseFileEditor.saveExpensesToFile(context, expenses)
-
     }
     fun updateExpenses(newExpenses: List<Expense>) {
         expenses.clear()
         expenses.addAll(newExpenses)
+        var totalAmount = 0.0
+        for (expense in expenses) {
+            try {
+                totalAmount += expense.amount.toDouble()
+            } catch (e: NumberFormatException) {
+                Log.e("ExpenseViewListAdapter", "Invalid amount: ${expense.amount}")
+            }
+        }
 
-
-
+        footerFragment.addToTotal(totalAmount.toString())
         notifyDataSetChanged()
     }
 

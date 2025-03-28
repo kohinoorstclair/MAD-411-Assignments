@@ -114,7 +114,14 @@ class ExpenseListFragment : Fragment() {
             replace(R.id.footerContainer, footerFragment)
             commit()
         }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        //Call the footer update
         val expenses = expenseFileEditor.loadExpensesFromFile(requireContext())
         expenseAdapter.updateExpenses(expenses)
     }
 }
+

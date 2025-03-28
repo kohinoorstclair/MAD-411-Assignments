@@ -10,8 +10,8 @@
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingTop="15dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="20dp"
+    android:paddingRight="25dp"
+    android:paddingBottom="30dp"
     tools:context="com.example.mad_411_assignments.MainActivity">
 
     <FrameLayout
@@ -76,7 +76,7 @@
         android:id="@+id/add_expense"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#D32F2F"
         android:insetTop="6dp"
         android:insetBottom="6dp"
@@ -91,27 +91,21 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ExpenseList"
         android:layout_width="370dp"
-        android:layout_height="418dp"
+        android:layout_height="380dp"
         android:scrollbars="vertical" />
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="168dp"
-        android:layout_weight="1">
-    </FrameLayout>
-        <Button
-            android:id="@+id/tipsButton"
-            android:layout_width="380dp"
-            android:layout_height="68dp"
-            android:backgroundTint="#D32F2F"
-            android:text="Financial Tips" />
+
 
 
     <FrameLayout
         android:id="@+id/footerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/tipsButton"
+        android:layout_width="380dp"
+        android:layout_height="68dp"
+        android:backgroundTint="#D32F2F"
+        android:text="Financial Tips" />
 
 </LinearLayout>
