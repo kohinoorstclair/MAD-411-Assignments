@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import FooterFragment
+import android.os.Bundle
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 
 class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     // setting views to variables
@@ -31,14 +34,14 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
             }
 
         }
-        showDetailsButton.setOnClickListener {
-            val context = itemView.context
-            val intent = Intent(context, ExpenseDetailsActivity::class.java)
-            intent.putExtra("name", expense.name)
-            intent.putExtra("amount", expense.amount)
-            intent.putExtra("date", expense.date)
-            context.startActivity(intent)
 
+        showDetailsButton.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString("name", expense.name)
+                putString("amount", expense.amount)
+                putString("date", expense.date)
+            }
+            itemView.findNavController().navigate(R.id.action_expenseListFragment_to_expenseDetailsFragment, bundle)
         }
 
     }

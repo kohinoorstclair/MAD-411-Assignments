@@ -52,6 +52,9 @@ class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private
     fun updateExpenses(newExpenses: List<Expense>) {
         expenses.clear()
         expenses.addAll(newExpenses)
+
+
+
         notifyDataSetChanged()
     }
 

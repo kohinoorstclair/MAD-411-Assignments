@@ -1,117 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6AFABA0C"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="15dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="20dp"
-    tools:context="com.example.mad_411_assignments.MainActivity">
-
-    <FrameLayout
-        android:id="@+id/headerContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@id/expense_name"
-        android:text="enter the Name of expense"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/expense_name"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Name of expense"
-        android:inputType="text" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@id/expense_amount"
-        android:text="enter the amount spend"
-        android:textSize="18sp" />
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
 
-    <EditText
-        android:id="@+id/expense_amount"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Amount"
-        android:inputType="text" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:padding="2dp">
-
-        <Button
-            android:id="@+id/date_button"
-            android:layout_width="152dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="#D32F2F"
-            android:text="select date" />
-
-
-        <TextView
-            android:id="@+id/expense_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date: Not Selected"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/add_expense"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#D32F2F"
-        android:insetTop="6dp"
-        android:insetBottom="6dp"
-
-        android:text="Add Expense"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:iconPadding="30dp" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ExpenseList"
-        android:layout_width="370dp"
-        android:layout_height="418dp"
-        android:scrollbars="vertical" />
-
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="168dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/tipsButton"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#D32F2F"
-            android:text="Financial Tips" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/footerContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="match_parent"
+        app:navGraph="@navigation/nav_graph"
+        app:defaultNavHost="true" />
 
 </LinearLayout>
