@@ -1,3 +1,5 @@
+package com.example.mad_411_assignments.fragments
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

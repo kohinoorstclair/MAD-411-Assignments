@@ -1,14 +1,13 @@
-package com.example.mad_411_assignments
+package com.example.mad_411_assignments.fragments
 
-import android.content.Intent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import FooterFragment
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import com.example.mad_411_assignments.model.Expense
+import com.example.mad_411_assignments.R
 
 class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     // setting views to variables

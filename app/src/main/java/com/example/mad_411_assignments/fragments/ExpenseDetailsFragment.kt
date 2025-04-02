@@ -1,4 +1,4 @@
-package com.example.mad_411_assignments
+package com.example.mad_411_assignments.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.mad_411_assignments.R
 
 class ExpenseDetailsFragment : Fragment() {
     lateinit var nameText: TextView

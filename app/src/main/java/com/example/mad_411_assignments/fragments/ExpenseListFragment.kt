@@ -1,13 +1,10 @@
-package com.example.mad_411_assignments
+package com.example.mad_411_assignments.fragments
 
 import ExpenseViewListAdapter
-import FooterFragment
-import HeaderFragment
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +14,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mad_411_assignments.model.Expense
+import com.example.mad_411_assignments.ExpenseFileEditor
+import com.example.mad_411_assignments.R
 import java.util.*
 
 class ExpenseListFragment : Fragment() {

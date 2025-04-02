@@ -2,6 +2,7 @@ package com.example.mad_411_assignments
 
 import android.content.Context
 import android.util.Log
+import com.example.mad_411_assignments.model.Expense
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
 
 import com.google.gson.Gson

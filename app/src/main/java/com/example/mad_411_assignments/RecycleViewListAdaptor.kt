@@ -1,21 +1,19 @@
 
 import android.content.Context
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mad_411_assignments.Expense
-import com.example.mad_411_assignments.ExpenseDetailsActivity
+import com.example.mad_411_assignments.model.Expense
 import com.example.mad_411_assignments.ExpenseFileEditor
-import com.example.mad_411_assignments.ExpenseRowView
+import com.example.mad_411_assignments.fragments.ExpenseRowView
 import com.example.mad_411_assignments.R
+import com.example.mad_411_assignments.fragments.FooterFragment
 
 
 // adaptor class the binds the expenses to the recylceview
 
-class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private val footerFragment: FooterFragment,private val context: Context) : RecyclerView.Adapter<ExpenseRowView>() {
+class ExpenseViewListAdapter(private val expenses: MutableList<Expense>, private val footerFragment: FooterFragment, private val context: Context) : RecyclerView.Adapter<ExpenseRowView>() {
     private val expenseFileEditor = ExpenseFileEditor()
     // this function is used to add expenserowview in place of each iten
 
