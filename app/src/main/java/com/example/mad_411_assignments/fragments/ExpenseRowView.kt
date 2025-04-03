@@ -40,7 +40,7 @@ class ExpenseRowView(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 putString("amount", expense.amount)
                 putString("date", expense.date)
                 putString("code",expense.CurrencyCode)
-                putString("code",expense.ConvertedCurrency.toString())
+                putString("CAmount",expense.ConvertedCurrency.toString())
             }
             itemView.findNavController().navigate(R.id.action_expenseListFragment_to_expenseDetailsFragment, bundle)
         }

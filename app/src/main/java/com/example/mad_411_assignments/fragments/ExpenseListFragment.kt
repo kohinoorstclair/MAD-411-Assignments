@@ -108,10 +108,11 @@ class ExpenseListFragment : Fragment() {
                                 val rates = RetrofitInstance.api.getExchangeRates()
                                 val rate = rates.cad[selectedCurrency]
 
+
                                 // checking if rates were found
                                 if (rate != null) {
-                                     convertedAmount = rate * amountValue
-                                    convertedCostDisplay.text = "Converted: ${convertedAmount} $selectedCurrency"
+                                     convertedAmount =amountValue/ rate
+                                    convertedCostDisplay.text = "Converted: ${convertedAmount}  CAD"
                                 } else {
 
                                     Log.e("CurrencyError", "Invalid currency selected: $selectedCurrency")

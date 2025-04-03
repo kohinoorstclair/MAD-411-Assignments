@@ -19,5 +19,8 @@
         android:id="@+id/expenseDetailsFragment"
         android:name="com.example.mad_411_assignments.fragments.ExpenseDetailsFragment"
         android:label="Expense Details"
-        tools:layout="@layout/fragment_expense_details" />
+        tools:layout="@layout/fragment_expense_details" >
+
+    </fragment>
+
 </navigation>

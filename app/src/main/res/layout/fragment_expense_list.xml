@@ -20,14 +20,12 @@
         android:layout_height="wrap_content" />
 
 
-
     <EditText
         android:id="@+id/expense_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Name of expense"
         android:inputType="text" />
-
 
 
     <EditText
@@ -40,8 +38,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/currencyConversionSwitch"
@@ -65,7 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Converted cost"
-        android:textAppearance="?attr/textAppearanceBody1"/>
+        android:textAppearance="?attr/textAppearanceBody1" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -110,20 +109,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ExpenseList"
         android:layout_width="370dp"
-        android:layout_height="380dp"
+        android:layout_height="355dp"
         android:scrollbars="vertical" />
-
-
 
 
     <FrameLayout
         android:id="@+id/footerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/tipsButton"
         android:layout_width="380dp"
-        android:layout_height="68dp"
+        android:layout_height="58dp"
         android:backgroundTint="#D32F2F"
         android:text="Financial Tips" />
 
