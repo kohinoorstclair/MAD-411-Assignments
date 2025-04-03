@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mad_411_assignments.R
 
-class ExpenseDetailsFragment : Fragment() {
+class ExpenseDetailsFragment  : Fragment() {
     lateinit var nameText: TextView
     lateinit var amountText: TextView
     lateinit var dateText: TextView
