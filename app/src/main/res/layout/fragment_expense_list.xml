@@ -19,12 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@id/expense_name"
-        android:text="enter the Name of expense"
-        android:textSize="18sp" />
+
 
     <EditText
         android:id="@+id/expense_name"
@@ -33,12 +28,6 @@
         android:hint="Name of expense"
         android:inputType="text" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@id/expense_amount"
-        android:text="enter the amount spend"
-        android:textSize="18sp" />
 
 
     <EditText
@@ -48,6 +37,42 @@
         android:hint="Amount"
         android:inputType="text" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/currencyConversionSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conversion needed"
+            android:textAppearance="?attr/textAppearanceBody1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/currencyTypeSwitch"
+                android:layout_width="160dp"
+                android:layout_height="54dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Select option"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/convertedCostDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Converted cost"
+        android:textAppearance="?attr/textAppearanceBody1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +95,7 @@
             android:layout_height="wrap_content"
             android:text="Date: Not Selected"
             android:textSize="18sp" />
+
     </LinearLayout>
 
     <Button
